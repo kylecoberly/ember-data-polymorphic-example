@@ -1,0 +1,12 @@
+h1 {
+	font-size: 1.6em;
+	padding-bottom: 10px;
+}
+h2 {
+	font-size: 1.4em;
+}
+label {
+	padding: 15px;
+	font-size: 1.4em;
+	color: green;
+}

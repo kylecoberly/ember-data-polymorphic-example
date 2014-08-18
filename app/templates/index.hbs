@@ -1,0 +1,15 @@
+<div>
+	<div>
+		<label>Name</label>
+		<p>{{fullName}}</p>
+	</div>
+	<div>
+		<label>Posts</label>
+		{{#each post in posts}}
+			<p>
+				{{post.title}}<br />
+				Type: {{post.postType}}<br />
+			</p>
+		{{/each}}
+	</div>
+</div>

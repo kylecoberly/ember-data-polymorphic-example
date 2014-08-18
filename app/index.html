@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PolymorphicTest</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{BASE_TAG}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/polymorphic-test.css">
+  </head>
+  <body>
+    <script>
+      window.PolymorphicTestENV = {{ENV}};
+      window.EmberENV = window.PolymorphicTestENV.EmberENV;
+    </script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/polymorphic-test.js"></script>
+    <script>
+      window.PolymorphicTest = require('polymorphic-test/app')['default'].create(PolymorphicTestENV.APP);
+    </script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mockjax/1.5.3/jquery.mockjax.js"></script>
+  </body>
+</html>

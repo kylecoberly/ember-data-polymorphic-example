@@ -1,7 +1,7 @@
 import DS from 'ember-data';
-import Post from '../models/post';
+import Post from '../models/page';
 
 export default Post.extend({
 	body: DS.attr('string'),
-	postType: 'text'
+	pageType: 'textOnly'
 });

@@ -1,14 +1,17 @@
 <div>
 	<div>
-		<label>Name</label>
-		<p>{{fullName}}</p>
+		<label>Topic</label>
+		<p>{{title}}</p>
 	</div>
 	<div>
-		<label>Posts</label>
-		{{#each post in posts}}
+		<label>Pages</label>
+		{{#each page in pages}}
 			<p>
-				{{post.title}}<br />
-				Type: {{post.postType}}<br />
+				{{page.title}}<br />
+				Type: {{page.pageType}}<br />
+				{{#if page.videoUrl}}
+					Video URL: {{page.videoUrl}}<br />
+				{{/if}}
 			</p>
 		{{/each}}
 	</div>

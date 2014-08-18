@@ -3,14 +3,15 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 	model: function() {
 		Ember.$.mockjax({
-			url: '/people/1',
+			url: '/topics/1',
 			response: function(settings) {
 				var json = {
-					person: {
+					topic: {
 						id: 1, 
-						first_name: 'luke', 
-						last_name: 'skywalker', 
-						links: { posts: '/people/1/posts' }
+						title: 'My Topic Title',
+						links: {
+							pages: '/topics/1/pages'
+						}
 					}
 				};
 				settings.success(json);
@@ -19,17 +20,26 @@ export default Ember.Route.extend({
 
 
 		Ember.$.mockjax({
-			url: '/people/1/posts',
+			url: '/topics/1/pages',
 			response: function(settings) {
 				var json = {
-					posts: [ 
-						{id: 1, title: 'A Photo', type: "photoPost" }, 
-						{id: 2, title: 'Some Text', type: "textPost" }
+					pages: [ 
+						{
+							id: 1,
+							title: 'A Video',
+							videoUrl: "www.google.com",
+							type: "video"
+
+						},{
+							id: 2,
+							title: 'Some Text',
+							type: "textOnly"
+						}
 					]
 				};
 				settings.success(json);
 			}
 		});
-		return this.store.find('person', 1);
+		return this.store.find('topic', 1);
 	}
 });
